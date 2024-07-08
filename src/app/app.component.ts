@@ -7,9 +7,9 @@ import { InvestmentInput } from './InvestmentInput.model';
 
 @Component({
     selector: 'app-root',
-    standalone: true,
+    standalone: false,
     templateUrl: './app.component.html',
-    imports: [HeaderComponent, UserInputComponent, InvesmentResultsComponent]
+    
 })
 export class AppComponent {
 mytabledata? :{
