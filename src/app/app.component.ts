@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { HeaderComponent } from './header/header.component';
 import { UserInputComponent } from "./user-input/user-input.component";
 import { InvesmentResultsComponent } from "./invesment-results/invesment-results.component";
+import { InvestmentInput } from './InvestmentInput.model';
+
 
 @Component({
     selector: 'app-root',
@@ -10,7 +12,14 @@ import { InvesmentResultsComponent } from "./invesment-results/invesment-results
     imports: [HeaderComponent, UserInputComponent, InvesmentResultsComponent]
 })
 export class AppComponent {
-tabledata! : TableDataArray
+mytabledata? :{
+  year: number;
+  interest: number;
+  valueEndOfYear: number;
+  annualInvestment: number;
+  totalInterest: number;
+  totalAmountInvested: number;
+}[];
   calculateInvestmentResults(data:InvestmentInput) {
     const {initialInvestment, annualInvestment,expectedReturn,duration} = data
     const annualData = [];
@@ -31,7 +40,7 @@ tabledata! : TableDataArray
         totalAmountInvested: initialInvestment + annualInvestment * year,
       });
     }
-    this.tabledata = annualData
+    this.mytabledata = annualData
   // console.log(annualData)
     // return annualData;
   }

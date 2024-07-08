@@ -1,17 +1,31 @@
-<p>Please enter some value and press "Calculate"</p>
- <table>
-    <thead>
-        <tr>
-            <th>Year</th>
-            <th>Invesment Value</th>
-            <th>Intersent(Year)</th>
-            <th>Total Intersent</th>
-            <th>Invesment Capital</th>
-        </tr>
-    </thead>
-    <tbody>
+@if(!tabledata){
+    <p class="center">Please enter some value and press "Calculate"</p>
+}
+@else {
 
+    <table>
+        <thead>
+            <tr>
+                <th>Year</th>
+                <th>Invesment Value</th>
+                <th>Intersent(Year)</th>
+                <th>Total Intersent</th>
+                <th>Invesment Capital</th>
+            </tr>
+        </thead>
+        <tbody>
+    @for(result of tabledata; track result){
+   <tr>
+    <td>{{result.year}}</td>
+<td>{{result.interest | currency}}</td>
+<td>{{result.valueEndOfYear | currency}}</td>
+<td>{{result.annualInvestment | currency}}</td>
+<td>{{result.totalAmountInvested | currency}}</td>
+   </tr>     
 
-        
-    </tbody>
- </table>
+    }
+    
+    
+        </tbody>
+     </table>
+}

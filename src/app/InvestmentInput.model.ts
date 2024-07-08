@@ -1,4 +1,4 @@
-type InvestmentInput={
+export type InvestmentInput={
     initialInvestment: number,
     annualInvestment:number, 
     expectedReturn:number, 
@@ -14,13 +14,13 @@ type InvestmentInput={
 //     totalAmountInvested: number,
 // }
 
-interface TableData {
+export interface TableDataArray {
     year: number;
     interest: number;
     valueEndOfYear: number;
     annualInvestment: number;
     totalInterest: number;
     totalAmountInvested: number;
-}
+}[];
 
-type TableDataArray = TableData[];
+// export type TableDataArray = TableData[];

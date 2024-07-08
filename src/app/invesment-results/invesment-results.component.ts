@@ -1,12 +1,21 @@
-import { Component, Input } from '@angular/core';
+
+import { CurrencyPipe } from '@angular/common';
+import { Component, Input, Pipe } from '@angular/core';
 
 @Component({
   selector: 'app-invesment-results',
   standalone: true,
-  imports: [],
+  imports: [CurrencyPipe],
   templateUrl: './invesment-results.component.html',
   styleUrl: './invesment-results.component.css'
 })
 export class InvesmentResultsComponent {
-@Input() tabledata! : TableDataArray
+@Input() tabledata?: {
+  year: number;
+  interest: number;
+  valueEndOfYear: number;
+  annualInvestment: number;
+  totalInterest: number;
+  totalAmountInvested: number;
+}[];
 }
