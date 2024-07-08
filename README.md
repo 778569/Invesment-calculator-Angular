@@ -1,3 +1,7 @@
+## Invesment-calculator
+An interactive web application built with Angular, allowing users to calculate potential returns on investments based on specified parameters. Includes dynamic charts and user-friendly inputs for intuitive financial planning
+
+
 # EssentialsPractice
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.0-next.2.
